@@ -1,7 +1,7 @@
-"use client";
+﻿\"use client\";
 
-import { useEffect, useState } from "react";
-import { createClient } from "@supabase/supabase-js";
+import { useEffect, useState } from \"react\";
+import { createClient } from \"@supabase/supabase-js\";
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -12,7 +12,7 @@ export default function Home() {
 
   useEffect(() => {
     const load = async () => {
-      const { data, error } = await supabase.from("messages").select("*");
+      const { data, error } = await supabase.from(\"messages\").select(\"*\");
       if (error) {
         console.error(error);
       } else {
@@ -23,8 +23,8 @@ export default function Home() {
   }, []);
 
   return (
-    <main style={{ padding: "2rem" }}>
-      <h1 style={{ fontSize: "24px", fontWeight: "bold" }}>
+    <main style={{ padding: \"2rem\" }}>
+      <h1 style={{ fontSize: \"24px\", fontWeight: \"bold\" }}>
         Supabase Connection Test
       </h1>
       <ul>
