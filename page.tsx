@@ -10,17 +10,16 @@ const supabase = createClient(supabaseUrl, supabaseAnonKey);
 export default function Home() {
   const [messages, setMessages] = useState<any[]>([]);
 
-  useEffect(() => {
-    const load = async () => {
-      const { data, error } = await supabase.from("messages").select("*");
-      if (error) {
-        console.error(error);
-      } else {
-        setMessages(data);
-      }
-    };
-    load();
-  }, []);
+ useEffect(() => {
+  const load = async () => {
+    const { data, error } = await supabase.from("messages").select("*");
+    console.log("Supabase data:", data);
+    console.log("Supabase error:", error);
+    setMessages(data || []);
+  };
+  load();
+}, []);
+
 
   return (
     <main style={{ padding: "2rem" }}>
