@@ -23,11 +23,13 @@ export default function Home() {
   }, []);
 
   return (
-    <main className="p-10">
-      <h1 className="text-2xl font-bold">Supabase Connection Test</h1>
-      <ul className="mt-4 space-y-2">
+    <main style={{ padding: "2rem" }}>
+      <h1 style={{ fontSize: "24px", fontWeight: "bold" }}>
+        Supabase Connection Test
+      </h1>
+      <ul>
         {messages.map((msg) => (
-          <li key={msg.id} className="p-2 border rounded">
+          <li key={msg.id}>
             {msg.content} ({msg.created_at})
           </li>
         ))}
