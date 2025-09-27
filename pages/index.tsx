@@ -13,11 +13,9 @@ export default function Home() {
   useEffect(() => {
     const load = async () => {
       const { data, error } = await supabase.from("messages").select("*");
-      if (error) {
-        console.error(error);
-      } else {
-        setMessages(data);
-      }
+      console.log("Supabase data:", data);
+      console.log("Supabase error:", error);
+      setMessages(data || []);
     };
     load();
   }, []);
